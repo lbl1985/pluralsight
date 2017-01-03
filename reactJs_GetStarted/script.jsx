@@ -129,7 +129,7 @@ var Game = React.createClass({
             selectedNumbers: [],
             usedNumbers: [],
             redraws: 5, 
-            doneStatus: 'Sorry, try again',
+            doneStatus: 'Game Over!',
             correct : null
     };
   },
