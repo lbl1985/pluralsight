@@ -165,7 +165,7 @@ var Game = React.createClass({
     var selectedNumbers = this.state.selectedNumbers,
         usedNumbers = this.state.usedNumbers,
         numberOfStars = this.state.numberOfStars,
-        correct = this.state.correct;
+        correct = this.state.correct,
         redraws = this.state.redraws;
 
     return (
