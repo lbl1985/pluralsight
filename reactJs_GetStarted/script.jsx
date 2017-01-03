@@ -125,12 +125,15 @@ var DoneFrame = React.createClass({
 
 var Game = React.createClass({
   getInitialState: function() {
-    return {numberOfStars: Math.floor(Math.random() * 9) + 1,
+    return {numberOfStars: this.randomNumber(),
             selectedNumbers: [],
             usedNumbers: [],
             redraws: 5, 
             correct : null
     };
+  },
+  randomNumber: function() {
+    return Math.floor(Math.random() * 9 ) + 1;
   },
   selectNumber: function(selectedNumber){
     if (this.state.selectedNumbers.indexOf(selectedNumber) < 0){
@@ -165,14 +168,14 @@ var Game = React.createClass({
       usedNumbers : usedNumbers,
       selectedNumbers : [],
       correct: null,
-      numberOfStars: Math.floor(Math.random() * 9 ) + 1
+      numberOfStars: this.randomNumber()
     })
   },
   redraw: function() {
     if(this.state.redraws > 0){
       this.setState({
         redraws: this.state.redraws - 1,
-        numberOfStars: Math.floor(Math.random() * 9 ) + 1,
+        numberOfStars: this.randomNumber(),
         correct: null,
         selectedNumbers:[]
       });
