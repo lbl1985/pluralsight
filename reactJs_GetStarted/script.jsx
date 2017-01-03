@@ -113,6 +113,16 @@ var NumbersFrame = React.createClass({
   }
 });
 
+var DoneFrame = React.createClass({
+  render:function(){
+    return (
+      <div className="well text-center">
+        <h2>...</h2>
+      </div>
+    );
+  }
+});
+
 var Game = React.createClass({
   getInitialState: function() {
     return {numberOfStars: Math.floor(Math.random() * 9) + 1,
@@ -194,6 +204,7 @@ var Game = React.createClass({
         <NumbersFrame selectedNumbers={this.state.selectedNumbers}
                       usedNumbers = {usedNumbers}
                       selectNumber={this.selectNumber} />
+        <DoneFrame />
       </div>
       );
   }
