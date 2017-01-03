@@ -88,7 +88,7 @@ var NumbersFrame = React.createClass({
         usedNumbers = this.props.usedNumbers,
         selectNumber = this.props.selectNumber,
         selectedNumbers = this.props.selectedNumbers;
-    for (var i = 0; i <= 9; i++ ) {
+    for (var i = 1; i <= 9; i++ ) {
       className = "number selected-" + (selectedNumbers.indexOf(i) >= 0)
       className += " used-" + (usedNumbers.indexOf(i) >= 0)
       numbers.push(
