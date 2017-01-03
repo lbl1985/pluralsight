@@ -129,7 +129,7 @@ var Game = React.createClass({
             selectedNumbers: [],
             usedNumbers: [],
             redraws: 5, 
-            doneStatus: 'Game Over!',
+            doneStatus: null,
             correct : null
     };
   },
@@ -187,8 +187,17 @@ var Game = React.createClass({
         usedNumbers = this.state.usedNumbers,
         numberOfStars = this.state.numberOfStars,
         correct = this.state.correct,
-        doneStatus = this.state.doneStatus,
-        redraws = this.state.redraws;
+        doneStatus = this.state.doneStatus,        
+        redraws = this.state.redraws,
+        bottomFrame;
+
+    if(doneStatus){
+      bottomFrame = <DoneFrame doneStatus={doneStatus}/>
+    } else {
+      bottomFrame = <NumbersFrame selectedNumbers={this.state.selectedNumbers}
+                      usedNumbers = {usedNumbers}
+                      selectNumber={this.selectNumber} />      
+    }
 
     return (
       <div id = "game">
@@ -206,10 +215,7 @@ var Game = React.createClass({
           <AnswerFrame  unSelectNumbers={this.unselectNumber}
                         selectedNumbers={this.state.selectedNumbers}/>
         </div>
-        <NumbersFrame selectedNumbers={this.state.selectedNumbers}
-                      usedNumbers = {usedNumbers}
-                      selectNumber={this.selectNumber} />
-        <DoneFrame doneStatus={doneStatus}/>
+        {bottomFrame}
       </div>
       );
   }
