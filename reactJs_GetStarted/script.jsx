@@ -189,7 +189,9 @@ var Game = React.createClass({
       selectedNumbers : [],
       correct: null,
       numberOfStars: this.randomNumber()
-    })
+    }, function(){
+      this.updateDoneStatus();
+    });
   },
   redraw: function() {
     if(this.state.redraws > 0){
@@ -198,6 +200,8 @@ var Game = React.createClass({
         numberOfStars: this.randomNumber(),
         correct: null,
         selectedNumbers:[]
+      }, function(){
+        this.updateDoneStatus();
       });
     }
   },
