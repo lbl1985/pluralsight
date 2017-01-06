@@ -6,3 +6,7 @@ Chapter 2:
 4. npm i (install required packages)
 5. Win+Ctrl+z (Launch dev menu in app)
 6. ./Example (Examples in react-native repo)
+7. Test installation: 
+	7.1 react-native init AwesomeProject
+    	cd AwesomeProject
+		react-native run-ios
