@@ -59,10 +59,10 @@ class Project:
 	#
 	def serialize(self):
 		return {
-			"name": self.name
-			"description": self.description
-			"id": self.id
-			"start_date": self.start_date
+			"name": self.name,
+			"description": self.description,
+			"id": self.id,
+			"start_date": self.start_date,
 			"end_date": self.end_date
 		}
 

@@ -6,7 +6,7 @@ class Candidate:
 	__experience = []
 
 	def __init__(self, first_name, last_name, experience = []):
-		self.__id = uuid.uuid()
+		self.__id = uuid.uuid1()
 		self.first_name = first_name
 		self.last_name = last_name
 		self.experience = experience
