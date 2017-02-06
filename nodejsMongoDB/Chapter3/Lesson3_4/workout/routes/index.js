@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const passport = require('../lib/passport');
-
+const ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -23,7 +23,7 @@ router.get('/logout', function(req, res){
   res.redirect('/');
 })
 
-router.get('/profile', function(req, res){
+router.get('/profile',ensureLoggedIn(), function(req, res){
   res.send('Hello ' + req.user.username);
 })
 
