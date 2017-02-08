@@ -1,0 +1,50 @@
+<h2>Hello {{name}}</h2>
+
+<p>
+    Two braces: {{htmlString}}
+    <br />
+    Three braces: {{{htmlString}}}
+</p>
+
+{{#if isLoggedIn}} 
+    <p> You're logged in. </p>
+{{/if}}
+
+{{#if isAdmin}}
+    <p> Hello Admin</p>
+{{else}}
+    <p> Hello user </p>
+{{/if}}
+
+{{#unless isAdmin}} 
+    <p> You're not an admin</p>
+{{/unless}}
+
+<ul>
+    {{#each names}}
+        <li>{{this}}</li>
+    {{/each}}
+</ul>
+
+<ul>
+    {{#each emptyList}}
+        <li>{{this}}</li>
+    {{else}}
+        <li>This list is empty</li>
+    {{/each}}
+</ul>
+
+{{#with user}}
+<p>
+    Full name:{{firstName}} {{lastName}} <br />
+    {{#with contacts}}
+        Twitter: {{twitter}} <br />
+    {{/with}}
+    Email: {{contacts.email}}
+</p>
+{{/with}}
+
+{{!--partial views--}}
+{{> userInfo title="User information"}}
+
+{{> namesList}}
