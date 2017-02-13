@@ -1,0 +1,21 @@
+		○ In command line: type in the following: mongoimport --db mongodb --collection restaurants --drop --file "C:\Experiment\pluralsight\nodejsMongoDB\Chapter4\4_4\primer-dataset.json"
+		○ In mongo db shell: 
+			§ Change database: 
+				□  Use local
+				□ Use test
+			§ db.help()
+			§ Use mongodb
+			§ Show collections
+			§ Operator starts with a $ sign
+			§ Db.restaruants.find().pretty()
+			§ db.restaurants.find({cuisine:"Thai"}).pretty()
+			§ db.restaurants.find({cuisine:"Thai", 'grades.score':{$gt:19}}).pretty()
+			§ db.restaurants.find().limit(3)
+			§ db.restaurants.findOne()
+			§ db.restaurants.findOne({}, {cuisine: 1, name: 1, _id: 0})
+			§ db.mongodb.insert({name:"Binlong", age: 32})
+			§ db.mongodb.find()
+			§ db.mongodb.save({name: 'Cindy', age: 32})
+			§ db.mongodb.save({_id: ObjectId("58a10fc7b5f6891c24a282a4"), name: "Binlong", age: 33, update: true})
+			§ First parameter to find the match, and the second one to set the changes.
+				□ db.mongodb.update( {name:'Binlong'}, {$set: {age: 29}} )
