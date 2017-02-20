@@ -22,4 +22,4 @@ router.route('/events')
     .post(function(req, res){
         //
     })
-
+;
